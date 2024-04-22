@@ -51,6 +51,12 @@ namespace DaySim.ChoiceModels.Default.Models
             alternative.AddUtilityTerm(102, _person.IsFulltimeWorker.ToFlag() * distance2 * homePierceCounty);
             alternative.AddUtilityTerm(103, _person.IsFulltimeWorker.ToFlag() * distance3 * homePierceCounty);
 
+            //seatac specific constants
+            int homeSeaTac = (homedist == 12) ? 1 : 0;
+            alternative.AddUtilityTerm(104, _person.IsFulltimeWorker.ToFlag() * distance1 * homeSeaTac);
+            alternative.AddUtilityTerm(105, _person.IsFulltimeWorker.ToFlag() * distance2 * homeSeaTac);
+            alternative.AddUtilityTerm(106, _person.IsFulltimeWorker.ToFlag() * distance3 * homeSeaTac);
+
         }
     }
 }
